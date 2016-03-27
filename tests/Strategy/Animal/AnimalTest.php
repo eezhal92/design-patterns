@@ -2,14 +2,13 @@
 
 namespace Test\Strategy\Animal;
 
-use Eezhal92\Strategy\Animal\Dog;
-use Eezhal92\Strategy\Animal\Bird;
 use Eezhal92\Strategy\Animal\Animal;
+use Eezhal92\Strategy\Animal\Bird;
+use Eezhal92\Strategy\Animal\Dog;
 use Eezhal92\Strategy\Animal\ItCanFly;
 
 class AnimalTest extends \PHPUnit_Framework_TestCase
 {
-
     private $dog;
     private $bird;
 
@@ -26,7 +25,7 @@ class AnimalTest extends \PHPUnit_Framework_TestCase
     }
 
     public function test_ability_to_make_sound()
-    {        
+    {
         $this->assertEquals('woof', $this->dog->makeSound());
         $this->assertEquals('tweet', $this->bird->makeSound());
     }
@@ -37,8 +36,7 @@ class AnimalTest extends \PHPUnit_Framework_TestCase
         $this->assertEquals("I'm flying so high", $this->bird->tryToFly());
 
         // we give dog ability to fly
-        $this->dog->setFlyingType(new ItCanFly);
+        $this->dog->setFlyingType(new ItCanFly());
         $this->assertEquals("I'm flying so high", $this->dog->tryToFly());
     }
-
 }

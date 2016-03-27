@@ -6,7 +6,6 @@ use Iterator;
 
 class BookListReverseIterator implements Iterator
 {
-
     private $bookList;
 
     private $currentBook = 0;
@@ -41,5 +40,4 @@ class BookListReverseIterator implements Iterator
     {
         return null !== $this->bookList->getBook($this->currentBook);
     }
-    
 }

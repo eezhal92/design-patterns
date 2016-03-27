@@ -5,12 +5,9 @@ namespace Test\Decorator\PizzaMaker;
 use Eezhal92\Decorator\PizzaMaker\Mozzarella;
 use Eezhal92\Decorator\PizzaMaker\PlainPizza;
 use Eezhal92\Decorator\PizzaMaker\TomatoSauce;
-use Eezhal92\Decorator\PizzaMaker\PizzaInterface;
-use Eezhal92\Decorator\PizzaMaker\ToppingDecorator;
 
 class DecoratorTest extends \PHPUnit_Framework_TestCase
 {
-
     public function test_plain_pizza_must_implements_pizza_interface()
     {
         $className = 'Eezhal92\Decorator\PizzaMaker\PlainPizza';
@@ -29,11 +26,10 @@ class DecoratorTest extends \PHPUnit_Framework_TestCase
 
     public function test_pizza_combination()
     {
-        $pizza = new TomatoSauce(new Mozzarella(new PlainPizza));
+        $pizza = new TomatoSauce(new Mozzarella(new PlainPizza()));
 
         $totalPrice = TomatoSauce::COST + Mozzarella::COST + PlainPizza::COST;
 
         $this->assertEquals($totalPrice, $pizza->getCost());
     }
-
 }

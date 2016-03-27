@@ -2,13 +2,12 @@
 
 namespace Test\Decorator\Webservice;
 
-use Eezhal92\Decorator\Webservice\Webservice;
 use Eezhal92\Decorator\Webservice\JsonRenderer;
+use Eezhal92\Decorator\Webservice\Webservice;
 use Eezhal92\Decorator\Webservice\XmlRenderer;
 
 class DecoratorTest extends \PHPUnit_Framework_TestCase
 {
-
     private $service;
 
     public function setUp()
@@ -18,7 +17,7 @@ class DecoratorTest extends \PHPUnit_Framework_TestCase
 
     public function test_render_data()
     {
-        $this->assertEquals($this->service->renderData(),['foo' => 'bar']);
+        $this->assertEquals($this->service->renderData(), ['foo' => 'bar']);
     }
 
     public function test_json_decorator()
@@ -42,5 +41,4 @@ class DecoratorTest extends \PHPUnit_Framework_TestCase
 
         $this->assertTrue(is_subclass_of($className, $interfaceName));
     }
-
 }

@@ -6,7 +6,6 @@ use Countable;
 
 class BookList implements Countable
 {
-
     private $books = [];
 
     public function addBook(Book $book)
@@ -19,8 +18,6 @@ class BookList implements Countable
         if (isset($this->books[$bookNumberToGet])) {
             return $this->books[$bookNumberToGet];
         }
-
-        return;
     }
 
     public function removeBook(Book $bookToRemove)
@@ -36,5 +33,4 @@ class BookList implements Countable
     {
         return count($this->books);
     }
-    
 }

@@ -4,7 +4,6 @@ namespace Eezhal92\Adapter;
 
 class EBookAdapter implements BookInterface
 {
-
     protected $ebook;
 
     public function __construct(EBookInterface $ebook)
@@ -21,5 +20,4 @@ class EBookAdapter implements BookInterface
     {
         return $this->ebook->pressNextButton();
     }
-    
 }
