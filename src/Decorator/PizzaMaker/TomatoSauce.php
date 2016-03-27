@@ -4,7 +4,6 @@ namespace Eezhal92\Decorator\PizzaMaker;
 
 class TomatoSauce extends ToppingDecorator
 {
-
     const COST = 0.50;
 
     public function __construct(PizzaInterface $pizza)
@@ -16,12 +15,11 @@ class TomatoSauce extends ToppingDecorator
 
     public function getDescription()
     {
-        return $this->pizza->getDescription() . ', tomato sauce';
+        return $this->pizza->getDescription().', tomato sauce';
     }
 
     public function getCost()
     {
         return $this->pizza->getCost() + self::COST;
     }
-    
 }

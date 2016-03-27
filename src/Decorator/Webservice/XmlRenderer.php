@@ -4,10 +4,9 @@ namespace Eezhal92\Decorator\Webservice;
 
 class XmlRenderer extends Decorator
 {
-
     public function renderData()
     {
-        $doc = new \DOMDocument;
+        $doc = new \DOMDocument();
 
         foreach ($this->wrapped->renderData() as $key => $val) {
             $doc->appendChild($doc->createElement($key, $val));
@@ -15,5 +14,4 @@ class XmlRenderer extends Decorator
 
         return $doc->saveXML();
     }
-    
 }

@@ -4,7 +4,6 @@ namespace Eezhal92\Strategy\Comparator;
 
 class IdComparator implements ComparatorInterface
 {
-
     public function compare($a, $b)
     {
         if ($a['id'] == $b['id']) {

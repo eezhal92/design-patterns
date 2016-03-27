@@ -4,7 +4,6 @@ namespace Eezhal92\Decorator\PizzaMaker;
 
 class PlainPizza implements PizzaInterface
 {
-
     const COST = 4.0;
 
     public function __construct()
@@ -21,5 +20,4 @@ class PlainPizza implements PizzaInterface
     {
         return self::COST;
     }
-    
 }

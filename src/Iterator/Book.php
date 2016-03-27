@@ -4,7 +4,6 @@ namespace Eezhal92\Iterator;
 
 class Book
 {
-
     private $title;
 
     private $author;
@@ -39,5 +38,4 @@ class Book
     {
         return "{$this->title} by {$this->author}";
     }
-    
 }

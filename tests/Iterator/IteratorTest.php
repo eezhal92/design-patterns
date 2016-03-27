@@ -13,16 +13,17 @@ class IteratorTest extends \PHPUnit_Framework_TestCase
 
     public function setUp()
     {
-        $this->bookList = new BookList;
+        $this->bookList = new BookList();
         $this->bookList->addBook(new Book('Lorem', 'Ipsum'));
         $this->bookList->addBook(new Book('Sit', 'Amet'));
         $this->bookList->addBook(new Book('Dolor', 'Loo'));
     }
 
-    public function expectedAuthors() {
+    public function expectedAuthors()
+    {
         return [
             [
-                ['Ipsum', 'Amet','Loo'],
+                ['Ipsum', 'Amet', 'Loo'],
             ],
         ];
     }
@@ -33,7 +34,7 @@ class IteratorTest extends \PHPUnit_Framework_TestCase
     public function test_use_iterator_and_validate_author($expected)
     {
         $iterator = new BookListIterator($this->bookList);
-        
+
         while ($iterator->valid()) {
             $expectedBook = array_shift($expected);
             $this->assertEquals($expectedBook, $iterator->current()->getAuthor());
@@ -47,7 +48,7 @@ class IteratorTest extends \PHPUnit_Framework_TestCase
     public function test_use_reverse_iterator_and_validate_author($expected)
     {
         $iterator = new BookListReverseIterator($this->bookList);
-        
+
         while ($iterator->valid()) {
             $expectedBook = array_pop($expected);
             $this->assertEquals($expectedBook, $iterator->current()->getAuthor());
@@ -74,13 +75,13 @@ class IteratorTest extends \PHPUnit_Framework_TestCase
         $book->setAuthor($newAuthor);
         $this->assertEquals($book->getAuthor(), $newAuthor);
 
-        $this->assertEquals($book->getAuthorAndTitle(), "$newTitle by $newAuthor");        
+        $this->assertEquals($book->getAuthorAndTitle(), "$newTitle by $newAuthor");
     }
 
     public function test_add_and_remove_book_to_from_book_list()
     {
         $book = new Book('How to be a leader', 'John Doe');
-        $bookList = new BookList;
+        $bookList = new BookList();
         $bookList->addBook($book);
 
         $this->assertEquals($bookList->getBook(0), $book);

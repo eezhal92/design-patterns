@@ -6,7 +6,6 @@ use LogicException;
 
 class ObjectCollection
 {
-
     private $elements;
 
     private $comparator;
@@ -18,7 +17,7 @@ class ObjectCollection
 
     public function sort()
     {
-        if (! $this->comparator) {
+        if (!$this->comparator) {
             throw new LogicException('Please set comparator.');
         }
 
