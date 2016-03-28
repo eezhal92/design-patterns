@@ -20,8 +20,9 @@ class MemoryStorage implements StorageInterface
         return $this->exists($id) ? $this->data[$id] : null;
     }
 
-    public function delete($id){
-        if (! $this->exists($id)) {
+    public function delete($id)
+    {
+        if (!$this->exists($id)) {
             return false;
         }
 
