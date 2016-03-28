@@ -4,7 +4,7 @@ namespace Eezhal92\DataMapper;
 
 class UserMapper
 {
-    /**     
+    /**
      * @var DBAL
      */
     protected $adapter;
@@ -35,7 +35,7 @@ class UserMapper
             throw new \InvalidArgumentException("User #$id not found");
         }
 
-        $row = $result->current();        
+        $row = $result->current(); 
 
         return $this->mapObject($row);
     }
@@ -43,8 +43,8 @@ class UserMapper
     public function save(User $user)
     {
         $data = [
-            'id' => $user->getId(),
-            'name' => $user->getName(),
+            'id'    => $user->getId(),
+            'name'  => $user->getName(),
             'email' => $user->getEmail(),
         ];
 
@@ -57,7 +57,7 @@ class UserMapper
         
         $this->adapter->update($data, ['id' => $user->getId()]);
 
-        return true;        
+        return true;
     }
 
     protected function mapObject(array $row)

@@ -49,8 +49,8 @@ class DataMapperTest extends \PHPUnit_Framework_TestCase
     public function test_find_one(User $existing)
     {
         $row = [
-            'id' => 1,
-            'name' => 'Dayle',
+            'id'    => 1,
+            'name'  => 'Dayle',
             'email' => 'dayle@mail.com',
         ];
 
