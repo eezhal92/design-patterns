@@ -53,8 +53,8 @@ class UserMapper
             $this->adapter->insert($data);
 
             return true;
-        } 
-        
+        }
+
         $this->adapter->update($data, ['id' => $user->getId()]);
 
         return true;
