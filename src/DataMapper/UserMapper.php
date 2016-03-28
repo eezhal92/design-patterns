@@ -35,7 +35,7 @@ class UserMapper
             throw new \InvalidArgumentException("User #$id not found");
         }
 
-        $row = $result->current(); 
+        $row = $result->current();
 
         return $this->mapObject($row);
     }
