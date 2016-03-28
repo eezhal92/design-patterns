@@ -2,10 +2,10 @@
 
 namespace Test\Repository;
 
-use Eezhal92\Repository\User;
 use Eezhal92\Repository\MemoryStorage;
-use Eezhal92\Repository\UserRepository;
 use Eezhal92\Repository\StorageInterface;
+use Eezhal92\Repository\User;
+use Eezhal92\Repository\UserRepository;
 
 class RepositoryTest extends \PHPUnit_Framework_TestCase
 {
@@ -13,7 +13,7 @@ class RepositoryTest extends \PHPUnit_Framework_TestCase
 
     public function setUp()
     {
-        $this->memoryStorage = new MemoryStorage;
+        $this->memoryStorage = new MemoryStorage();
     }
 
     public function test_memory_storage_implements_memory_interface()
@@ -22,7 +22,7 @@ class RepositoryTest extends \PHPUnit_Framework_TestCase
     }
 
     public function test_memory_storage_functionalities()
-    {   
+    {
         $data = ['field' => 'something'];
 
         $this->assertEquals($this->memoryStorage->persist($data), 1);
@@ -44,7 +44,7 @@ class RepositoryTest extends \PHPUnit_Framework_TestCase
 
         $user = new User(null, 'John', 'john@mail.com');
         $user2 = new User(null, 'Jane', 'jane@mail.com');
-        
+
         $userRepo->save($user);
         $userRepo->save($user2);
 
