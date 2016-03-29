@@ -7,7 +7,7 @@ use Eezhal92\Template\Vacation\CityJourney;
 use Eezhal92\Template\Vacation\BeachJourney;
 
 class TemplateMethodTest extends \PHPUnit_Framework_TestCase
-{    
+{
     public function test_beach_journey()
     {
         $journey = new BeachJourney;
