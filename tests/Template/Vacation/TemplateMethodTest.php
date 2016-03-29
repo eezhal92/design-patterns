@@ -2,22 +2,22 @@
 
 namespace Test\Template\Vacation;
 
-use Eezhal92\Template\Vacation\Journey;
-use Eezhal92\Template\Vacation\CityJourney;
 use Eezhal92\Template\Vacation\BeachJourney;
+use Eezhal92\Template\Vacation\CityJourney;
+use Eezhal92\Template\Vacation\Journey;
 
 class TemplateMethodTest extends \PHPUnit_Framework_TestCase
 {
     public function test_beach_journey()
     {
-        $journey = new BeachJourney;
+        $journey = new BeachJourney();
         $this->expectOutputRegex('#swimming#');
         $journey->takeTrip();
     }
 
     public function test_city_journey()
     {
-        $journey = new CityJourney;
+        $journey = new CityJourney();
         $this->expectOutputRegex('#get lost#');
         $journey->takeTrip();
     }
