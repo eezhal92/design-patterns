@@ -13,11 +13,10 @@ abstract class Journey
         $this->takePlane();
     }
 
-    protected abstract function enjoy();
+    abstract protected function enjoy();
 
     protected function buyGift()
     {
-
     }
 
     private function buyAFlight()
