@@ -61,5 +61,5 @@ class ChainOfResponsibilityTest extends \PHPUnit_Framework_TestCase
         $this->assertFalse($status);
 
         $this->assertEquals(SlowStorage::class, $request->handlerClassName);
-    }    
+    }
 }

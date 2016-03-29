@@ -20,8 +20,8 @@ abstract class Handler
         $request->handlerClassName = get_called_class();
         $processed = $this->process($request);
 
-        if (! $processed) {
-            if (! is_null($this->successor)) {
+        if (!$processed) {
+            if (!is_null($this->successor)) {
                 $processed = $this->successor->handle($request);
             }
         }
